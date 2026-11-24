@@ -1,0 +1,7 @@
+{
+  "name": "timescaledb-vscode-daily-usage",
+  "engine": "timescaledb",
+  "slug": "timescaledb",
+  "kind": "application",
+  "useCase": "daily-usage"
+}

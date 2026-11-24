@@ -1,0 +1,38 @@
+[
+  {
+    "phase": "create",
+    "query": "CREATE TABLE fbx_timescaledb_000000000000000000000000 (id INTEGER PRIMARY KEY, day TEXT, requests INTEGER)"
+  },
+  {
+    "phase": "seed",
+    "query": "INSERT INTO fbx_timescaledb_000000000000000000000000 (id, day, requests) VALUES (1, '2026-01-01', 500)"
+  },
+  {
+    "phase": "seed",
+    "query": "INSERT INTO fbx_timescaledb_000000000000000000000000 (id, day, requests) VALUES (2, '2026-01-02', 30)"
+  },
+  {
+    "phase": "seed",
+    "query": "INSERT INTO fbx_timescaledb_000000000000000000000000 (id, day, requests) VALUES (3, '2026-01-03', 700)"
+  },
+  {
+    "phase": "read",
+    "query": "SELECT * FROM fbx_timescaledb_000000000000000000000000 LIMIT 100"
+  },
+  {
+    "phase": "update",
+    "query": "UPDATE fbx_timescaledb_000000000000000000000000 SET requests = 510 WHERE id = 1"
+  },
+  {
+    "phase": "verify",
+    "query": "SELECT * FROM fbx_timescaledb_000000000000000000000000 WHERE id = 1 LIMIT 100"
+  },
+  {
+    "phase": "delete",
+    "query": "DELETE FROM fbx_timescaledb_000000000000000000000000 WHERE id = 2"
+  },
+  {
+    "phase": "cleanup",
+    "query": "DROP TABLE fbx_timescaledb_000000000000000000000000"
+  }
+]
